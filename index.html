@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Undrin_Game1</title>
+    <title>Hamspster</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,13 @@
     type: Phaser.AUTO,
     width: 1500,
     height: 900,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
+    },
     scene: {
         preload: preload,
         create: create,
@@ -34,8 +41,10 @@ function preload ()
 
 function create ()
 {
-    this.add.image(300,400,'hampster');
-    this.image.setScale(.1);
+    this.add.image(100,400,'hampster');
+
+    this.image.setScale(.5);
+
     this.input.once('pointerdown', () =>
         {
 
